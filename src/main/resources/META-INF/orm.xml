@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings 
+    
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+          http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
+    version="2.1">
+
+    
+    <description>Persistence for gov.ic.geoint.gets.document</description>
+    <package>entity</package>
+     
+    <entity class="exceptionexample.hibernate.App" access="FIELD" name="App">   
+
+            <table name="App"/>
+           
+            <attributes>
+                <id name="id"/>
+                <basic name="id">
+                    <column name="id" />
+                </basic>
+                <basic name="relevanceStart" > 
+                    <column name="relevanceStart" column-definition="varChar" length="100" />  
+                </basic>
+                <basic name="relevanceEnd">
+                    <column name="relevanceEnd" column-definition="varChar" length="100"/> 
+                </basic>
+            </attributes>
+        </entity>
+  
+     
+   
+        <converter class="candlelight.joda.converters.JodaDateTimeConverter" auto-apply="true"/>
+        <converter class="candlelight.joda.converters.JodaInstantConverter" auto-apply="true"/>
+        <converter class="candlelight.joda.converters.JodaIntervalConverter" auto-apply="true"/>
+        <converter class="candlelight.joda.converters.JodaLocalDateConverter" auto-apply="true"/>
+        <converter class="candlelight.joda.converters.JodaDurationConverter" auto-apply="true"/>
+        <!--    <converter class="gov.ic.geoint.gds.handler.document.DatetimeConverter" auto-apply="true"/>-->
+    
+</entity-mappings>
+
