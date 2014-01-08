@@ -1,27 +1,14 @@
 package exceptionexample.hibernate;
 
-import junit.framework.Test;
-
-import gov.ic.geoint.gets.document.util.MockDocumentGenerator;
-import java.lang.reflect.Array;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.Random;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import org.joda.time.LocalDate;
-import org.joda.time.convert.Converter;
-import org.junit.AfterClass;
 import static org.junit.Assert.*;
-import org.junit.BeforeClass;
 
 
 /**
@@ -54,13 +41,9 @@ public class AppTest {
         App md = new App();
         
         md.setId("1132123");
-        md.setRelevanceEnd(null);
-          Calendar cal = new GregorianCalendar();
-        cal.add(Calendar.DAY_OF_YEAR, random.nextInt(120));
-        md.setRelevanceStart(LocalDate.fromCalendarFields(cal));
-        cal.add(Calendar.DAY_OF_YEAR, random.nextInt(3));
-        md.setRelevanceEnd(LocalDate.fromCalendarFields(cal));
-        
+        md.setRelevanceEnd(LocalDate.parse("2013-12-09"));
+        md.setRelevanceStart(LocalDate.parse("2013-12-09"));
+
 
         System.out.println("mock document:" + md);
 
